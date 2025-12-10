@@ -23,7 +23,6 @@ public class Content {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = false, length = 50)
     private ContentType type;
 
@@ -53,9 +52,6 @@ public class Content {
 
     @Column(name = "question", columnDefinition = "TEXT")
     private String questionText;
-
-    @Column(name = "company", length = 100)
-    private String company;
 
     @Column(name = "views", columnDefinition = "int4 default 0")
     private Integer views;
