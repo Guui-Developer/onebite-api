@@ -35,7 +35,6 @@
 ## 3. API 명세 (API Specification)
 
 ### 3.1 카테고리 API (Category API)
-**Base URL:** `/`
 
 #### 3.1.1 전체 카테고리 조회 (Get All Categories)
 카테고리 그룹 및 하위 카테고리 목록을 계층 구조로 조회합니다.
@@ -75,7 +74,6 @@
 ---
 
 ### 3.2 학습 데이터 API (Learning Data API)
-**Base URL:** `/`
 
 #### 3.2.1 콘텐츠 조회 (Get Content)
 조건에 맞는 학습 콘텐츠를 조회합니다. 커서 기반 페이지네이션(Cursor-based Pagination)을 지원합니다.
