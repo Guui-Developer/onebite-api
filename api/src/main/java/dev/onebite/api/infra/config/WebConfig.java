@@ -10,10 +10,21 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+                .allowedOrigins(
+                        "http://localhost:3000",
+                        "http://127.0.0.1:3000",
+                        "http://localhost:8080",
+                        "http://127.0.0.1:8080",
+                        "http://localhost:5173",
+                        "https://dev.devonebite.xyz",
+                        "https://live.devonebite.xyz",
+                        "https://api.devonebite.xyz/dev",
+                        "https://api.devonebite.xyz/prod",
+                        "https://api.devonebite.xyz"
+                )
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD")
                 .allowedHeaders("*")
-                .allowCredentials(false)
+                .allowCredentials(true)
                 .maxAge(3600);
     }
 }

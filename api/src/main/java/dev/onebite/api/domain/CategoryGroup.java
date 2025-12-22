@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Getter
 @Entity
-@ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "category_groups")
 public class CategoryGroup {
