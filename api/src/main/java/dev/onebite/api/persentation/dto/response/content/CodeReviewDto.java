@@ -10,17 +10,19 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonPropertyOrder({"id", "type", "title", "before", "after", "feedback", "tags", "createdAt"})
+@JsonPropertyOrder({"id", "type", "title","language", "before", "after", "feedback", "tags", "createdAt"})
 public class CodeReviewDto extends ContentDto {
     private String before;
     private String after;
     private String feedback;
+    private String language;
 
     public static CodeReviewDto from(Content content) {
         CodeReviewDto dto = new CodeReviewDto(
                 content.getBeforeCode(),
                 content.getAfterCode(),
-                content.getFeedback()
+                content.getFeedback(),
+                content.getLanguage()
         );
         dto.id = content.getId();
         dto.type = "code_review";

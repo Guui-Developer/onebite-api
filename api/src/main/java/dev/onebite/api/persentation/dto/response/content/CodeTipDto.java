@@ -16,7 +16,7 @@ public class CodeTipDto extends ContentDto {
     public static CodeTipDto from(Content content) {
         CodeTipDto dto = new CodeTipDto(
                 content.getCode(),
-                content.getCode(),
+                content.getLanguage(),
                 content.getDescription()
         );
         dto.id = content.getId();

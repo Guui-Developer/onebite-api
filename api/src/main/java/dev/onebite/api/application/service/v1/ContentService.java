@@ -1,4 +1,4 @@
-package dev.onebite.api.application.service;
+package dev.onebite.api.application.service.v1;
 
 import dev.onebite.api.domain.Content;
 import dev.onebite.api.infra.repository.ContentRepository;
@@ -65,7 +65,7 @@ public class ContentService {
                 ? contentIds.subList(0, limit)
                 : contentIds;
 
-        Long nextCursorId = targetIds.get(targetIds.size() - 1);
+        Long nextCursorId = targetIds.getLast();
 
         List<Content> contents = contentRepository.findByIdsWithCategories(targetIds);
 

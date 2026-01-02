@@ -1,6 +1,7 @@
 package dev.onebite.api.persentation.api.v1;
 
-import dev.onebite.api.application.service.ContentService;
+import dev.onebite.api.application.service.v1.ContentService;
+import dev.onebite.api.application.service.v1.ContentServiceV2;
 import dev.onebite.api.persentation.dto.response.ContentCursorResponse;
 import dev.onebite.api.persentation.dto.request.ContentSearchRequest;
 import dev.onebite.api.persentation.dto.response.ApiResponse;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LearningDataApiController {
 
-    private final ContentService contentService;
+    private final ContentServiceV2 contentService;
 
     @GetMapping("/content")
     public ApiResponse<ContentCursorResponse> getAllContent(@Valid ContentSearchRequest request) {

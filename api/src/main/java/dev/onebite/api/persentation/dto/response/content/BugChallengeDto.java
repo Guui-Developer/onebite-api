@@ -9,16 +9,18 @@ import lombok.NoArgsConstructor;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonPropertyOrder({"id", "type", "title", "code", "answer", "tags", "createdAt"})
+@JsonPropertyOrder({"id", "type", "title", "language", "code", "answer", "tags", "createdAt"})
 public class BugChallengeDto extends ContentDto {
 
     private String code;
     private String answer;
+    private String language;
 
     public static BugChallengeDto from(Content content) {
         BugChallengeDto dto = new BugChallengeDto(
                 content.getCode(),
-                content.getAnswer()
+                content.getAnswer(),
+                content.getLanguage()
         );
         dto.id = content.getId();
         dto.type = "bug_challenge";

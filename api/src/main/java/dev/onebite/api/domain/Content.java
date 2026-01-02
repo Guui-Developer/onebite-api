@@ -6,7 +6,9 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -69,6 +71,12 @@ public class Content {
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
+    @Column(name = "language", length = 20)
+    private String language;
+
+    @JdbcTypeCode(SqlTypes.JSON)
+    private List<String> tails = new ArrayList<>();
 
     @Column(name = "deleted_at")
     private LocalDateTime deletedAt;
